@@ -15,9 +15,9 @@
     <packaging>jar</packaging>
 
     <scm>
-        <connection>scm:git:git@github.com:siddhantcvdi/debezium-connector-sqlite.git</connection>
-        <developerConnection>scm:git:git@github.com:siddhantcvdi/debezium-connector-sqlite.git</developerConnection>
-        <url>https://github.com/siddhantcvdi/debezium-connector-sqlite</url>
+        <connection>scm:git:git@github.com:debezium/debezium-connector-sqlite.git</connection>
+        <developerConnection>scm:git:git@github.com:debezium/debezium-connector-sqlite.git</developerConnection>
+        <url>https://github.com/debezium/debezium-connector-sqlite</url>
         <tag>HEAD</tag>
     </scm>
 
