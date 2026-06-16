@@ -43,8 +43,8 @@ public class SQLiteConnectorConfig extends RelationalDatabaseConnectorConfig {
             }
         },
 
-        /** Skip the initial snapshot and start streaming from the current CDC log position. */
-        NEVER("never") {
+        /** Never snapshot data; start streaming from the current CDC log position. */
+        NO_DATA("no_data") {
             @Override
             public boolean shouldSnapshotData(boolean offsetExists, boolean snapshotInProgress) {
                 return false;
@@ -88,7 +88,7 @@ public class SQLiteConnectorConfig extends RelationalDatabaseConnectorConfig {
             .withImportance(ConfigDef.Importance.LOW)
             .withDescription("Specifies the criteria for performing a snapshot on startup. "
                     + "Options include: 'initial' (default) to snapshot only when no offset exists; "
-                    + "'never' to skip snapshot entirely.");
+                    + "'no_data' to skip the data snapshot and stream from the current position.");
 
     /**
      * The connector's configuration, built on the relational base definition. {@code type} fields
