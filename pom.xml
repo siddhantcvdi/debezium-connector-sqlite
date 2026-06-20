@@ -36,33 +36,20 @@
     </licenses>
 
     <repositories>
-        <!-- Needed to resolve debezium-parent:3.6.0-SNAPSHOT out-of-tree -->
         <repository>
             <id>central-snapshots</id>
             <name>Maven Central Snapshots</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+            <url>${publish.snapshot.url}</url>
             <releases>
-                <enabled>false</enabled>
+                <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
             </releases>
             <snapshots>
                 <enabled>true</enabled>
+                <updatePolicy>never</updatePolicy>
             </snapshots>
         </repository>
     </repositories>
-
-    <pluginRepositories>
-        <pluginRepository>
-            <id>central-snapshots</id>
-            <name>Maven Central Snapshots</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </pluginRepository>
-    </pluginRepositories>
 
     <properties>
         <version.sqlite-jdbc>3.47.1.0</version.sqlite-jdbc>
