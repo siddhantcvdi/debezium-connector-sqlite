@@ -43,6 +43,6 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
       - name: Maven build core
-        run: ./sqlite/mvnw clean install -f core/pom.xml -pl debezium-bom,debezium-connector-common,debezium-util,debezium-config,debezium-embedded,debezium-storage,debezium-connect-plugins -am -DskipTests -DskipITs -Dformat.formatter.goal=validate -Dformat.imports.goal=check -Dhttp.keepAlive=false -Dmaven.wagon.http.pool=false -Dmaven.wagon.httpconnectionManager.ttlSeconds=120
+        run: ./sqlite/mvnw clean install -f core/pom.xml -pl debezium-bom,debezium-assembly-descriptors,debezium-connector-common,debezium-util,debezium-config,debezium-embedded,debezium-storage,debezium-connect-plugins -am -DskipTests -DskipITs -Dformat.formatter.goal=validate -Dformat.imports.goal=check -Dhttp.keepAlive=false -Dmaven.wagon.http.pool=false -Dmaven.wagon.httpconnectionManager.ttlSeconds=120
       - name: Maven build SQLite
         run: ./sqlite/mvnw clean install -f sqlite/pom.xml -Passembly -Dformat.formatter.goal=validate -Dformat.imports.goal=check -Dhttp.keepAlive=false -Dmaven.wagon.http.pool=false -Dmaven.wagon.httpconnectionManager.ttlSeconds=120 -DfailFlakyTests=false -Ddebezium.test.records.waittime=5
